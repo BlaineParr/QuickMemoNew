@@ -12,7 +12,7 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="ca.georgiancollege.quickmemo.CreateActivity"
     tools:showIn="@layout/activity_create"
-    android:background="@android:color/holo_orange_dark">
+    android:background="@color/colorPrimary">
 
     <LinearLayout
         android:orientation="horizontal"
