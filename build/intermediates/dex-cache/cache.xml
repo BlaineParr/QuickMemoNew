@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.1.1_dd16848017c7cbe4f5942ea26b56af85525a293d\classes.dex" />
+    </item>
+    <item
+        jar="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.1.1_69daa74935c809a764be444e3859f07b1d7b3a23\classes.dex" />
+    </item>
+    <item
+        jar="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.1.1_680720c89fd0d162b36d08605de617b807b807f7\classes.dex" />
+    </item>
+    <item
+        jar="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.1.1_7ba586bed48141ee732110cb265dc9f16e5cf7f0\classes.dex" />
+    </item>
+    <item
+        jar="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="70b00fd9a6018920e00b107bef02a5a2918268c5">
+        <dex dex="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_c302fbabcd1bc3e49172a9b3f30667b0ddc43bca\classes.dex" />
+    </item>
+    <item
+        jar="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\exploded-aar\com.android.support\design\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="379471b2bd17d9737c050345c08e8c7d16589784">
+        <dex dex="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.1.1_11021da45ef45cf58f69cf45abe9eb504bea3cb3\classes.dex" />
+    </item>
+    <item
+        jar="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="ace891128f18ae9fe31fce6d5ed29686943cb564">
+        <dex dex="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_2719caa4c94310118836266d83bd5e804a92b264\classes.dex" />
+    </item>
+    <item
+        jar="D:\Android\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.1.1_e05a52316c98a1d5ae1194531dae9b777a6da94a\classes.dex" />
+    </item>
+
+</items>
