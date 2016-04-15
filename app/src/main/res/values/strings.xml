@@ -15,5 +15,5 @@
     <string name="descriptionTextViewString">Description</string>
     <string name="submitButtonString">Submit</string>
     <string name="dateTextViewString">Date</string>
-    <string name="dateEditTextString">Enter a date</string>
+    <string name="dateEditTextString">Select a date</string>
 </resources>
