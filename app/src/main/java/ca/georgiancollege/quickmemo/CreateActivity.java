@@ -1,17 +1,19 @@
 package ca.georgiancollege.quickmemo;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 
-public class CreateActivity extends AppCompatActivity {
+import java.util.Calendar;
 
+public class CreateActivity extends AppCompatActivity {
+Calendar calendar = Calendar.getInstance();
     //instance variables
     Button submitButton;
 
@@ -19,6 +21,7 @@ public class CreateActivity extends AppCompatActivity {
     EditText categoryEditText;
     EditText dateEditText;
     EditText descriptionEditText;
+
 
     /*
      * This method...
@@ -44,6 +47,23 @@ public class CreateActivity extends AppCompatActivity {
         categoryEditText = (EditText) findViewById(R.id.categoryEditText);
         dateEditText = (EditText) findViewById(R.id.dateEditText);
         descriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
+        dateEditText.setFocusable(false);
+        //date
+
+        dateEditText.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                new DatePickerDialog(CreateActivity.this,listener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+
+            DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener(){
+                @Override
+                public void onDateSet(DatePicker view,int year, int monthOfYear, int dayOfMonth){
+                    dateEditText.setText(year+"-"+String.format("%02d",(monthOfYear+1))+"-"+String.format("%02d",dayOfMonth));
+                }
+            };
+        });
+
 
         submitButton = (Button) findViewById(R.id.submitButton);
 
