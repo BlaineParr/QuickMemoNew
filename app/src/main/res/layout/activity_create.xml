@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="ca.georgiancollege.quickmemo.CreateActivity">
+    tools:context="ca.georgiancollege.quickmemo.CreateActivity"
+    tools:showIn="@layout/content_create">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
