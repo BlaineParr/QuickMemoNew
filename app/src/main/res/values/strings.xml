@@ -1,11 +1,11 @@
 <resources>
-    <string name="app_name">QuickMemo</string>
+    <string name="app_name">Quick Memo</string>
     <string name="action_settings">Settings</string>
     <string name="todayButtonString">Today</string>
     <string name="allButtonString">All</string>
     <string name="finishedButtonString">Done</string>
     <string name="newButtonString">New</string>
-    <string name="title_activity_create">CreateActivity</string>
+    <string name="title_activity_create">Create a New Memo</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="titleEditTextString">Enter a title</string>
     <string name="titleTextViewString">Title</string>

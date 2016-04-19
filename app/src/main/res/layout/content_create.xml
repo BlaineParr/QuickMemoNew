@@ -26,7 +26,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/titleTextViewString"
             android:id="@+id/titleTextView"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/colorIcons" />
     </LinearLayout>
 
     <LinearLayout
@@ -42,7 +43,8 @@
             android:text="@string/titleEditTextString"
             android:ems="10"
             android:id="@+id/titleEditText"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/colorIcons" />
 
     </LinearLayout>
 
@@ -65,7 +67,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/categoryTextViewString"
             android:id="@+id/categoryTextView"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/colorIcons" />
     </LinearLayout>
 
     <LinearLayout
@@ -79,7 +82,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/categoryEditText"
             android:text="@string/categoryEditTextString"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/colorIcons" />
 
     </LinearLayout>
 
@@ -102,7 +106,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/dateTextViewString"
             android:id="@+id/dateTextView"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/colorIcons" />
     </LinearLayout>
 
     <LinearLayout
@@ -118,7 +123,8 @@
             android:ems="10"
             android:id="@+id/dateEditText"
             android:layout_weight="1"
-            android:text="@string/dateEditTextString" />
+            android:text="@string/dateEditTextString"
+            android:textColor="@color/colorIcons" />
     </LinearLayout>
 
     <LinearLayout
@@ -133,7 +139,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="@string/descriptionTextViewString"
             android:id="@+id/DescriptionTextView"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/colorIcons" />
     </LinearLayout>
 
     <LinearLayout
@@ -149,7 +156,8 @@
             android:ems="10"
             android:id="@+id/descriptionEditText"
             android:layout_weight="1"
-            android:text="@string/descriptionEditTextString" />
+            android:text="@string/descriptionEditTextString"
+            android:textColor="@color/colorIcons" />
     </LinearLayout>
 
     <LinearLayout
@@ -162,6 +170,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/submitButtonString"
-            android:id="@+id/submitButton" />
+            android:id="@+id/submitButton"
+            android:textColor="@color/colorIcons"
+            android:background="@drawable/custom_button"
+            android:layout_margin="5dp" />
     </LinearLayout>
 </LinearLayout>

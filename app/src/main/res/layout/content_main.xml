@@ -28,28 +28,40 @@
             android:layout_height="wrap_content"
             android:text="@string/todayButtonString"
             android:id="@+id/todayButton"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:background="@drawable/custom_button"
+            android:textColor="@color/colorIcons"
+            android:layout_margin="5dp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/allButtonString"
             android:id="@+id/allButton"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/colorIcons"
+            android:background="@drawable/custom_button"
+            android:layout_margin="5dp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/finishedButtonString"
             android:id="@+id/doneButton"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/colorIcons"
+            android:background="@drawable/custom_button"
+            android:layout_margin="5dp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/newButtonString"
             android:id="@+id/newButton"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:textColor="@color/colorIcons"
+            android:background="@drawable/custom_button"
+            android:layout_margin="5dp" />
     </LinearLayout>
 
     <LinearLayout
