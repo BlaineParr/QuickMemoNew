@@ -11,6 +11,7 @@ package ca.georgiancollege.quickmemo;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -128,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
      * This method displays the users' entered memos
      */
     private void displayMemos(int sort) {
-        Log.d("QuickMemo", "Made it here");
         //clear contentLayout
         this.contentLayout.removeAllViews();
         this.shownMemos.clear();
@@ -144,10 +144,8 @@ public class MainActivity extends AppCompatActivity {
         //if DONE memos are to be displayed, use a for loop to find which ones are done
         switch(sort) {
             case ALL: this.shownMemos = new ArrayList<Memo>(this.memos);
-                Log.d("QuickMemo", "Made it here 2");
                 break;
             case TODAY:
-                Log.d("QuickMemo", "Made it here 3");
                 for(int i = 0; i < this.memos.size(); i++) {
                     if(this.memos.get(i).getDate().equals(today)) {
                         this.shownMemos.add(this.memos.get(i));
@@ -223,9 +221,15 @@ public class MainActivity extends AppCompatActivity {
             l3.setBackgroundColor(Color.WHITE);
             l3.setLayoutParams(lParams);
 
+            LayoutParams buttonLayoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            buttonLayoutParams.setMargins(5, 5, 5, 5);
+
             if(!shownMemos.get(i).getIsDone()) {
                 Button finishMemoButton = new Button(this);
                 finishMemoButton.setText("Finish");
+                finishMemoButton.setTextColor(ContextCompat.getColor(this, R.color.colorIcons));
+                finishMemoButton.setBackground(ContextCompat.getDrawable(this, R.drawable.custom_button));
+                finishMemoButton.setLayoutParams(buttonLayoutParams);
 
                 finishMemoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -240,6 +244,10 @@ public class MainActivity extends AppCompatActivity {
 
             Button deleteMemoButton = new Button(this);
             deleteMemoButton.setText("Delete");
+            deleteMemoButton.setTextColor(ContextCompat.getColor(this, R.color.colorIcons));
+            deleteMemoButton.setTextSize(12);
+            deleteMemoButton.setBackground(ContextCompat.getDrawable(this, R.drawable.custom_button));
+            deleteMemoButton.setLayoutParams(buttonLayoutParams);
 
             deleteMemoButton.setOnClickListener(new View.OnClickListener() {
                 @Override
