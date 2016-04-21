@@ -1,3 +1,11 @@
+/*
+ * Quick Memo
+ * By: Blaine Parr, Richard Estrada and Cody Hutchinson
+ * Date Last Edited: April 21, 2016
+ * Last Edited By: Blaine Parr
+ * Description: This class displays a message to the user letting them know that all of the
+ * information required to create a memo has not been entered.
+ */
 package ca.georgiancollege.quickmemo;
 
 import android.app.Dialog;
@@ -15,14 +23,9 @@ public class InfoAlert extends DialogFragment {
                 .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
 
-                    }
+                    } //method onClick ends
                 });
-                /*.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // User cancelled the dialog
-                    }
-                });*/
         // Create the AlertDialog object and return it
         return builder.create();
-    }
-}
+    } //method onCreateDialog ends
+} //class InfoAlert ends

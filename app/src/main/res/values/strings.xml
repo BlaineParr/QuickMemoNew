@@ -6,7 +6,7 @@
     <string name="finishedButtonString">Done</string>
     <string name="newButtonString">New</string>
     <string name="title_activity_create">Create a New Memo</string>
-    <string name="title_activity_splash">SplashActivity</string>
+    <string name="title_activity_splash">Quick Memo</string>
     <string name="titleEditTextString">Enter a title</string>
     <string name="titleTextViewString">Title</string>
     <string name="categoryTextViewString">Category</string>

@@ -1,19 +1,22 @@
+/*
+ * Quick Memo - Create Activity
+ * By: Blaine Parr, Richard Estrada and Cody Hutchinson
+ * Date Last Edited: April 21, 2016
+ * Last Edited By: Blaine Parr
+ * Description: This class is responsible for creating the memos that the user will view on the
+ * MainActivity.
+ */
 package ca.georgiancollege.quickmemo;
 
 import android.app.DatePickerDialog;
-import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -29,7 +32,7 @@ Calendar calendar = Calendar.getInstance();
 
 
     /*
-     * This method...
+     * This method sets up the create form for use.
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +40,6 @@ Calendar calendar = Calendar.getInstance();
         setContentView(R.layout.activity_create);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
 
         //Initialize variables
         titleEditText = (EditText) findViewById(R.id.titleEditText);
@@ -59,7 +53,7 @@ Calendar calendar = Calendar.getInstance();
             @Override
             public void onClick(View v){
                 new DatePickerDialog(CreateActivity.this,listener,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
-            }
+            } //onClick ends
 
             DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener(){
                 @Override
@@ -72,15 +66,17 @@ Calendar calendar = Calendar.getInstance();
 
         submitButton = (Button) findViewById(R.id.submitButton);
 
+        //send the information back to the main activity when the submitButton is clicked.
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //if any of the fields are empty, display a message telling the user they must enter the info
                 if(titleEditText.getText().toString().equals("") || categoryEditText.getText().toString().equals("") || dateEditText.getText().toString().equals("") || descriptionEditText.getText().toString().equals("")) {
                     InfoAlert infoAlert = new InfoAlert();
                     infoAlert.show(getSupportFragmentManager(), "info");
                 } //if ends
                 else {
-
+                    //store all info in putExtra, and send the results with code 100
                     Intent i = new Intent();
 
                     i.putExtra("title", titleEditText.getText().toString());
@@ -90,7 +86,7 @@ Calendar calendar = Calendar.getInstance();
 
                     setResult(100, i);
 
-                    finish();
+                    finish(); //close CreateActivity
                 } //else ends
             } //method onClick ends
         });

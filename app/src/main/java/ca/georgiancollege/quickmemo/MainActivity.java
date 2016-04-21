@@ -1,7 +1,7 @@
 /*
  * Quick Memo
  * By: Blaine Parr, Richard Estrada and Cody Hutchinson
- * Date Last Edited: April 12, 2016
+ * Date Last Edited: April 21, 2016
  * Last Edited By: Blaine Parr
  * Description: This application displays tasks/memos entered by the user. The user can view tasks
  * for today, completed tasks and all tasks.
@@ -10,14 +10,11 @@ package ca.georgiancollege.quickmemo;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.DrawableContainer;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -171,23 +168,25 @@ public class MainActivity extends AppCompatActivity {
             //make a new linear layout
             LinearLayout l = new LinearLayout(this);
 
+            //drawable to be used as the background for l
             GradientDrawable drawable = new GradientDrawable();
 
+            //if the memo is done, the background should be green, otherwise make it blue-grey
             if(this.shownMemos.get(j).getIsDone()) {
                 drawable.setColor(ContextCompat.getColor(this, R.color.colorDone));
             } //if ends
             else {
                 drawable.setColor(ContextCompat.getColor(this, R.color.colorAccent));
-            }
+            } //else ends
+
+            //add a light grey border
             drawable.setStroke(5, ContextCompat.getColor(this, R.color.colorDivider));
 
             //set up linear layout
             l.setOrientation(LinearLayout.HORIZONTAL);
-            //l.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
             l.setBackground(drawable);
             LayoutParams lParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-            l.setPadding(20, 0, 20, 0);
-
+            l.setPadding(20, 0, 20, 0); //padding on left and right
             l.setLayoutParams(lParams);
 
             //set up the title text view
@@ -244,9 +243,12 @@ public class MainActivity extends AppCompatActivity {
             l3.setBackgroundColor(Color.WHITE);
             l3.setLayoutParams(lParams);
 
+            //buttons are 100dp high
             LayoutParams buttonLayoutParams = new LayoutParams(0, 100, 1f);
             buttonLayoutParams.setMargins(5, 5, 5, 5);
 
+            //add a finish button if the memo is not done
+            //otherwise place an empty TextView
             if(!shownMemos.get(i).getIsDone()) {
                 Button finishMemoButton = new Button(this);
                 finishMemoButton.setText("Finish");
@@ -255,6 +257,7 @@ public class MainActivity extends AppCompatActivity {
                 finishMemoButton.setBackground(ContextCompat.getDrawable(this, R.drawable.custom_button));
                 finishMemoButton.setLayoutParams(buttonLayoutParams);
 
+                //on click set the memo to be done
                 finishMemoButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -271,10 +274,12 @@ public class MainActivity extends AppCompatActivity {
                 l3.addView(emptyTextView);
             } //else ends
 
+            //place an empty TextView to keep space between the finish and delete buttons
             TextView emptyTextView2 = new TextView(this);
             emptyTextView2.setLayoutParams(buttonLayoutParams);
             l3.addView(emptyTextView2);
 
+            //add a delete button so the user can delete their memos
             Button deleteMemoButton = new Button(this);
             deleteMemoButton.setText("Delete");
             deleteMemoButton.setTextColor(ContextCompat.getColor(this, R.color.colorIcons));
@@ -282,6 +287,7 @@ public class MainActivity extends AppCompatActivity {
             deleteMemoButton.setBackground(ContextCompat.getDrawable(this, R.drawable.custom_button));
             deleteMemoButton.setLayoutParams(buttonLayoutParams);
 
+            //on click delete the memo from the array
             deleteMemoButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -292,9 +298,11 @@ public class MainActivity extends AppCompatActivity {
 
             l3.addView(deleteMemoButton);
 
+            //make l2 and l3 gone by default so the user must click on them to display them
             l2.setVisibility(View.GONE);
             l3.setVisibility(View.GONE);
 
+            //when l is clicked show l2 and l3 if they are gone, or make them gone if they are visible
             l.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

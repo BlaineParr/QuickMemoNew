@@ -1,3 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.2"
+        sha1="929c3d912674c04824b72144a3509083f17679ee">
+        <dex dex="D:\School\Year 3\Semester 1\Mobile\Final Assignment\QuickMemo\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_c302fbabcd1bc3e49172a9b3f30667b0ddc43bca\classes.dex" />
+    </item>
+
+</items>
