@@ -39,8 +39,7 @@
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="@string/titleEditTextString"
+            android:hint="@string/titleEditTextString"
             android:ems="10"
             android:id="@+id/titleEditText"
             android:layout_weight="1"
@@ -74,7 +73,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/categoryEditText"
-            android:text="@string/categoryEditTextString"
+            android:hint="@string/categoryEditTextString"
             android:layout_weight="1"
             android:textColor="@color/colorIcons" />
 
@@ -109,7 +108,7 @@
             android:ems="10"
             android:id="@+id/dateEditText"
             android:layout_weight="1"
-            android:text="@string/dateEditTextString"
+            android:hint="@string/dateEditTextString"
             android:textColor="@color/colorIcons" />
     </LinearLayout>
 
@@ -142,7 +141,7 @@
             android:ems="10"
             android:id="@+id/descriptionEditText"
             android:layout_weight="1"
-            android:text="@string/descriptionEditTextString"
+            android:hint="@string/descriptionEditTextString"
             android:textColor="@color/colorIcons" />
     </LinearLayout>
 

@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
             //l.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
             l.setBackground(drawable);
             LayoutParams lParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-            l.setPadding(20, 0, 0, 0);
+            l.setPadding(20, 0, 20, 0);
 
             l.setLayoutParams(lParams);
 
@@ -202,6 +202,7 @@ public class MainActivity extends AppCompatActivity {
             dateTextView.setTextColor(Color.WHITE);
             dateTextView.setTextSize(24);
             dateTextView.setText(this.shownMemos.get(i).getDate());
+            dateTextView.setGravity(Gravity.RIGHT);
             dateTextView.setLayoutParams(new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f));
 
             //add the textViews

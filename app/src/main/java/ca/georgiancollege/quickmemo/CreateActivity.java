@@ -1,14 +1,19 @@
 package ca.georgiancollege.quickmemo;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -48,8 +53,8 @@ Calendar calendar = Calendar.getInstance();
         dateEditText = (EditText) findViewById(R.id.dateEditText);
         descriptionEditText = (EditText) findViewById(R.id.descriptionEditText);
         dateEditText.setFocusable(false);
-        //date
 
+        //date
         dateEditText.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -70,16 +75,23 @@ Calendar calendar = Calendar.getInstance();
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent();
+                if(titleEditText.getText().toString().equals("") || categoryEditText.getText().toString().equals("") || dateEditText.getText().toString().equals("") || descriptionEditText.getText().toString().equals("")) {
+                    InfoAlert infoAlert = new InfoAlert();
+                    infoAlert.show(getSupportFragmentManager(), "info");
+                } //if ends
+                else {
 
-                i.putExtra("title", titleEditText.getText().toString());
-                i.putExtra("category", categoryEditText.getText().toString());
-                i.putExtra("date", dateEditText.getText().toString());
-                i.putExtra("description", descriptionEditText.getText().toString());
+                    Intent i = new Intent();
 
-                setResult(100, i);
+                    i.putExtra("title", titleEditText.getText().toString());
+                    i.putExtra("category", categoryEditText.getText().toString());
+                    i.putExtra("date", dateEditText.getText().toString());
+                    i.putExtra("description", descriptionEditText.getText().toString());
 
-                finish();
+                    setResult(100, i);
+
+                    finish();
+                } //else ends
             } //method onClick ends
         });
     } //method onCreate ends
