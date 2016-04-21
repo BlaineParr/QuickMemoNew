@@ -51,13 +51,6 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/background_dark"
-        android:id="@+id/dividerLinearLayout"></LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/categoryTextViewLinearLayout">
 
@@ -86,13 +79,6 @@
             android:textColor="@color/colorIcons" />
 
     </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/background_dark"
-        android:id="@+id/divider2LinearLayout" />
 
     <LinearLayout
         android:orientation="horizontal"

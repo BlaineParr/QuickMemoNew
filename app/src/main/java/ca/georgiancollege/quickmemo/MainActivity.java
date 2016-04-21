@@ -10,11 +10,15 @@ package ca.georgiancollege.quickmemo;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.DrawableContainer;
+import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -167,21 +171,36 @@ public class MainActivity extends AppCompatActivity {
             //make a new linear layout
             LinearLayout l = new LinearLayout(this);
 
+            GradientDrawable drawable = new GradientDrawable();
+
+            if(this.shownMemos.get(j).getIsDone()) {
+                drawable.setColor(ContextCompat.getColor(this, R.color.colorDone));
+            } //if ends
+            else {
+                drawable.setColor(ContextCompat.getColor(this, R.color.colorAccent));
+            }
+            drawable.setStroke(5, ContextCompat.getColor(this, R.color.colorDivider));
+
             //set up linear layout
             l.setOrientation(LinearLayout.HORIZONTAL);
-            l.setBackgroundColor(Color.DKGRAY);
+            //l.setBackgroundColor(ContextCompat.getColor(this, R.color.colorAccent));
+            l.setBackground(drawable);
             LayoutParams lParams = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+            l.setPadding(20, 0, 0, 0);
+
             l.setLayoutParams(lParams);
 
             //set up the title text view
             TextView titleTextView = new TextView(this);
             titleTextView.setTextColor(Color.WHITE);
+            titleTextView.setTextSize(24);
             titleTextView.setText(this.shownMemos.get(i).getTitle());
             titleTextView.setLayoutParams(new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f));
 
             //set up the date textView
             TextView dateTextView = new TextView(this);
             dateTextView.setTextColor(Color.WHITE);
+            dateTextView.setTextSize(24);
             dateTextView.setText(this.shownMemos.get(i).getDate());
             dateTextView.setLayoutParams(new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f));
 
@@ -190,22 +209,25 @@ public class MainActivity extends AppCompatActivity {
             l.addView(dateTextView);
 
             //create another LinearLayout
-            LinearLayout l2 = new LinearLayout(this);
+            final LinearLayout l2 = new LinearLayout(this);
 
             //set up the LinearLayout
             l2.setOrientation(LinearLayout.HORIZONTAL);
             l2.setBackgroundColor(Color.WHITE);
             l2.setLayoutParams(lParams);
+            l2.setPadding(20, 0, 0, 0);
 
             //set up the categoryTextView
             TextView categoryTextView = new TextView(this);
             categoryTextView.setTextColor(Color.BLACK);
+            categoryTextView.setTextSize(20);
             categoryTextView.setText(this.shownMemos.get(i).getCategory());
             categoryTextView.setLayoutParams(new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f));
 
             //set up the descriptionTextView
             TextView descriptionTextView = new TextView(this);
             descriptionTextView.setTextColor(Color.BLACK);
+            descriptionTextView.setTextSize(20);
             descriptionTextView.setText(this.shownMemos.get(i).getDescription());
             descriptionTextView.setLayoutParams(new LayoutParams(0, LayoutParams.WRAP_CONTENT, 1f));
 
@@ -214,20 +236,21 @@ public class MainActivity extends AppCompatActivity {
             l2.addView(descriptionTextView);
 
             //create a third LinearLayout
-            LinearLayout l3 = new LinearLayout(this);
+            final LinearLayout l3 = new LinearLayout(this);
 
             //set up the LinearLayout
             l3.setOrientation(LinearLayout.HORIZONTAL);
             l3.setBackgroundColor(Color.WHITE);
             l3.setLayoutParams(lParams);
 
-            LayoutParams buttonLayoutParams = new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+            LayoutParams buttonLayoutParams = new LayoutParams(0, 100, 1f);
             buttonLayoutParams.setMargins(5, 5, 5, 5);
 
             if(!shownMemos.get(i).getIsDone()) {
                 Button finishMemoButton = new Button(this);
                 finishMemoButton.setText("Finish");
                 finishMemoButton.setTextColor(ContextCompat.getColor(this, R.color.colorIcons));
+                finishMemoButton.setTextSize(12);
                 finishMemoButton.setBackground(ContextCompat.getDrawable(this, R.drawable.custom_button));
                 finishMemoButton.setLayoutParams(buttonLayoutParams);
 
@@ -241,6 +264,15 @@ public class MainActivity extends AppCompatActivity {
 
                 l3.addView(finishMemoButton);
             } //if ends
+            else {
+                TextView emptyTextView = new TextView(this);
+                emptyTextView.setLayoutParams(buttonLayoutParams);
+                l3.addView(emptyTextView);
+            } //else ends
+
+            TextView emptyTextView2 = new TextView(this);
+            emptyTextView2.setLayoutParams(buttonLayoutParams);
+            l3.addView(emptyTextView2);
 
             Button deleteMemoButton = new Button(this);
             deleteMemoButton.setText("Delete");
@@ -258,6 +290,23 @@ public class MainActivity extends AppCompatActivity {
             });
 
             l3.addView(deleteMemoButton);
+
+            l2.setVisibility(View.GONE);
+            l3.setVisibility(View.GONE);
+
+            l.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if(l2.getVisibility() == View.GONE) {
+                        l2.setVisibility(View.VISIBLE);
+                        l3.setVisibility(View.VISIBLE);
+                    } //if ends
+                    else {
+                        l2.setVisibility(View.GONE);
+                        l3.setVisibility(View.GONE);
+                    } //else ends
+                } //method onClick ends
+            });
 
             //add the LinearLayouts to contentLayout
             this.contentLayout.addView(l);
